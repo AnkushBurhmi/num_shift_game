@@ -17,9 +17,9 @@ int detect_arrow_keys(int *n, int *m, int **matr)
         {
             case 72:
             {// UP
-                //temp = matr[r][c] + matr[r-1][c];
-                //matr[r-1][c] = temp - matr[r-1][c];
-                //matr[r][c] = temp - matr[r][c];         
+                temp = matr[r][c] + matr[r-1][c];
+                matr[r-1][c] = temp - matr[r-1][c];
+                matr[r][c] = temp - matr[r][c];         
                 print_matrix(matr);                
                 break;
             }
@@ -44,7 +44,7 @@ int detect_arrow_keys(int *n, int *m, int **matr)
     return 0;
 }
 
-void start_shift_game(int *a, int **mat) // here a is the number of tries
+void start_shift_game(int *a, int **matr) // here a is the number of tries
 {
     int *x;
     int *y;
@@ -53,9 +53,9 @@ void start_shift_game(int *a, int **mat) // here a is the number of tries
     
     if (*x >= 0 && *y >= 0)
     {
-       // detect_arrow_keys(x,y,mat);
+        detect_arrow_keys(x,y,matr);
     }
         
-    //*a -= 1; // decrement value of a after every trial
+    *a -= 1; // decrement value of a after every trial
 }
 

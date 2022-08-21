@@ -36,6 +36,8 @@ int main()
     
     // before ending the program, we need to delete allocated memory
     // and also remove the possibilty of dangling pointer
+
+    getch();
     for(i = 0; i<4; i++)
     {
         free(mat[i]);
